@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Table & Effect</title>
+  
+    <!--google fonts-->
+    
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+  <style>
+  body{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 10px;
+  padding: 5px;
+}
+  body caption{
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: center;
+    color: #AD00C9;
+    background-color: #F3FF2C;
+    border-radius: 0px;
+    padding: 5px 10px;
+    width: auto;
+    display: inline-block;
+    
+  }
+  .cap{
+    align-items: center;
+  }
+  caption:hover{
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-align: center;
+    color: #AD00C9;
+    background-color: rgba(243, 255, 44, .6);
+    text-decoration: underline dashed orangered;
+  }
+  
+  table, th, td{
+   /* border: 1px solid #774D00;*/
+    border-collapse: collapse;
+    padding: 3px;
+    background-color: #FF1755;
+  }
+  .table{
+    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: scroll;
+    width: auto;
+  }
+  th{
+    padding: 5px 10px;
+    background-color: #774D00;
+    color: white;
+  }
+  td{
+    padding: 5px 10px;
+    background-color: #3A7700;
+    color: white;
+  }
+  th:hover, tr:hover td {
+    background-color: #38C395;
+    /*color: #FF1755;*/
+    font-weight: bold;
+  }
+  tr:active th, tr:active td{
+    background-color: #00C959;
+  }
+  </style>
+  
+</head>
+
+<body>
+        <caption> Nominal List of Mobile Numbers </caption>
+  <div class="table">    
+     
+      <table>
+        <thead>
+         <tr>
+           <th>
+             SL
+           </th>
+           <th>
+             Official Number
+           </th>
+           <th>
+             Name
+           </th>
+           <th>
+             Rank
+           </th>
+           <th>
+             Mobile Number
+           </th>
+           <th>
+             Occupation
+           </th>
+           <th>
+             Remarks
+           </th>
+         </tr> 
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              01
+            </td>
+            <td>
+              20170169
+            </td>
+            <td>
+              Md Redoanul Islam
+            </td>
+            <td>
+              AB(FC-III)
+            </td>
+            <td>
+              +8801773650270
+            </td>
+            <td>
+              Government Employee
+            </td>
+            <td>
+              N/A
+            </td>
+            
+          </tr>
+          
+           <tr>
+            <td>
+              02
+            </td>
+            <td>
+              20170170
+            </td>
+            <td>
+              Md Mosfikur Rahim
+            </td>
+            <td>
+              AB(FC-III)
+            </td>
+            <td>
+              +8801773650***
+            </td>
+            <td>
+              Cricketer
+            </td>
+            <td>
+              N/A
+            </td>
+          </tr>         
+         
+        </tbody>
+      </table>
+  </div>    
+</body>
+
+</html>
