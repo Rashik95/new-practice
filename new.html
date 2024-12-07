@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Table</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Styles */
+    body {
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+    }
+
+    .caption {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #AD00C9;
+      background-color: #F3FF2C;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .caption:hover {
+      color: #fff;
+      background-color: #5A4258;
+      text-decoration: underline;
+    }
+
+    .table-wrapper {
+      max-width: 100%;
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px; /* Ensures proper display on larger screens */
+    }
+
+    th, td {
+      padding: 12px 20px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #774D00;
+      color: white;
+    }
+
+    td {
+      background-color: #3A7700;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #38C395;
+      font-weight: bold;
+    }
+
+    /* Desktop-Specific Styles */
+    @media (min-width: 1024px) {
+      .table-wrapper {
+        margin: 20px auto;
+        max-width: 90%;
+      }
+
+      table {
+        min-width: 100%;
+      }
+    }
+
+    /* Tablet Styles */
+    @media (max-width: 1024px) {
+      body {
+        padding: 15px;
+      }
+
+      .caption {
+        font-size: 1.8rem;
+      }
+
+      table {
+        min-width: 600px;
+      }
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .caption {
+        font-size: 1.5rem;
+      }
+
+      .table-wrapper {
+        overflow-x: auto;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead tr {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+      }
+
+      td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #774D00;
+        flex: 0 0 40%;
+      }
+
+      td {
+        flex: 1 1 60%;
+      }
+    }
+
+    /* Small Mobile Styles */
+    @media (max-width: 480px) {
+      .caption {
+        font-size: 1.2rem;
+      }
+
+      td {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      td::before {
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="caption">Nominal List of Mobile Numbers</div>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>SL</th>
+          <th>Official Number</th>
+          <th>Name</th>
+          <th>Rank</th>
+          <th>Mobile Number</th>
+          <th>Occupation</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="SL">01</td>
+          <td data-label="Official Number">20170169</td>
+          <td data-label="Name">Md Redoanul Islam</td>
+          <td data-label="Rank">AB(FC-III)</td>
+          <td data-label="Mobile Number">+8801773650270</td>
+          <td data-label="Occupation">Government Employee</td>
+          <td data-label="Remarks">N/A</td>
+        </tr>
+        <tr>
+          <td data-label="SL">02</td>
+          <td data-label="Official Number">20170170</td>
+          <td data-label="Name">Md Mosfikur Rahim</td>
+          <td data-label="Rank">AB(FC-III)</td>
+          <td data-label="Mobile Number">+8801773650***</td>
+          <td data-label="Occupation">Cricketer</td>
+          <td data-label="Remarks">N/A</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    loremipsam ruwggeghr tid idc r rieh3t 48ehtt 2 iejebhwuer riddidnt rifk3b2bhr eoeeorn2nh RB.
+  </p>
+</body>
+
+</html>

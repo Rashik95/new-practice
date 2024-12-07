@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Table</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Caption Styling */
+    .caption-wrapper {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .caption {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #AD00C9;
+      background-color: #F3FF2C;
+      padding: 10px 15px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .caption:hover {
+      color: #fff;
+      background-color: #5A4258;
+    }
+
+    .date {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    /* Table Wrapper */
+    .table-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      overflow-x: auto;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #774D00;
+      color: white;
+    }
+
+    td {
+      background-color: #3A7700;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #38C395;
+      font-weight: bold;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .caption {
+        font-size: 1.5rem;
+      }
+
+      .table-wrapper {
+        padding: 5px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        white-space: nowrap;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+      }
+
+      td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #774D00;
+        flex: 0 0 40%;
+      }
+
+      td {
+        flex: 0 0 60%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      td {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      td::before {
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Caption Section -->
+  <div class="caption-wrapper">
+    <div class="caption">Nominal List of Mobile Numbers</div>
+    <div class="date" id="currentDate"></div>
+  </div>
+
+  <!-- Table Section -->
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>SL</th>
+          <th>Official Number</th>
+          <th>Name</th>
+          <th>Rank</th>
+          <th>Mobile Number</th>
+          <th>Occupation</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="SL">01</td>
+          <td data-label="Official Number">20170169</td>
+          <td data-label="Name">Md Redoanul Islam</td>
+          <td data-label="Rank">AB(FC-III)</td>
+          <td data-label="Mobile Number">+8801773650270</td>
+          <td data-label="Occupation">Government Employee</td>
+          <td data-label="Remarks">N/A</td>
+        </tr>
+        <tr>
+          <td data-label="SL">02</td>
+          <td data-label="Official Number">20170170</td>
+          <td data-label="Name">Md Mosfikur Rahim</td>
+          <td data-label="Rank">AB(FC-III)</td>
+          <td data-label="Mobile Number">+8801773650***</td>
+          <td data-label="Occupation">Cricketer</td>
+          <td data-label="Remarks">N/A</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- JavaScript to Update Date -->
+  <script>
+    const dateElement = document.getElementById("currentDate");
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const today = new Date().toLocaleDateString("en-US", options);
+    dateElement.textContent = `Date: ${today}`;
+  </script>
+</body>
+
+</html>
